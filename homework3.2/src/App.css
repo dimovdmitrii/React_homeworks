@@ -1,0 +1,53 @@
+.list-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 2px solid #007bff;
+  border-radius: 12px;
+  background-color: #f9faff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.list-container h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.person-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  color: #333;
+}
+
+.person-item:last-child {
+  border-bottom: none;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+.delete-button:hover {
+  background-color: #a71d2a;
+}
+
+/* Стили для App */
+
+.App {
+  text-align: center;
+  padding: 20px;
+  background-color: #eef4fb;
+  min-height: 100vh;
+}
