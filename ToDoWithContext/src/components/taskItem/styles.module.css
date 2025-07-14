@@ -1,0 +1,29 @@
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.taskItem:hover {
+  background-color: #f1f1f1;
+}
+.text {
+  font-size: 18px;
+}
+.button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.button:hover {
+  background-color: #c82333;
+}

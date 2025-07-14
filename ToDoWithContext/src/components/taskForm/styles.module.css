@@ -1,0 +1,24 @@
+.taskForm {
+  display: flex;
+  margin-bottom: 20px;
+}
+.input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+.button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.2s;
+}
+.button:hover {
+  background-color: #0056b3;
+}
