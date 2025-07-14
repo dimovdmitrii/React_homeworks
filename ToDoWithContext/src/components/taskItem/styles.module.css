@@ -1,29 +1,44 @@
 .taskItem {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 12px;
-  margin-bottom: 8px;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin-bottom: 10px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  transition: background-color 0.2s;
+  border-radius: 5px;
 }
-.taskItem:hover {
-  background-color: #f1f1f1;
-}
+
 .text {
-  font-size: 18px;
+  flex-grow: 1; /* Позволяет тексту занимать все доступное пространство */
+  margin-right: 10px;
+  word-break: break-word; /* Для длинных текстов */
 }
+
+/* НОВЫЙ СТИЛЬ: для выполненных задач */
+.completed {
+  text-decoration: line-through; /* Перечеркиваем текст */
+  color: #888; /* Делаем текст серым */
+}
+
 .button {
-  padding: 5px 10px;
-  border: none;
-  background-color: #dc3545;
+  background-color: #dc3545; /* Красная кнопка */
   color: white;
-  cursor: pointer;
+  border: none;
+  padding: 8px 12px;
   border-radius: 4px;
-  transition: background-color 0.2s;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
+
 .button:hover {
   background-color: #c82333;
+}
+
+/* НОВЫЙ СТИЛЬ: для чекбокса */
+.checkbox {
+  margin-right: 10px; /* Отступ справа от чекбокса */
+  cursor: pointer;
+  width: 20px; /* Увеличиваем размер для удобства */
+  height: 20px;
 }
