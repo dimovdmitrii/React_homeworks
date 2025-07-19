@@ -1,0 +1,49 @@
+/* src/App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Занимает всю высоту viewport */
+  background-color: #191414; /* Темный фон, похожий на Spotify */
+  color: #ffffff; /* Белый текст по умолчанию */
+  font-family: "Arial", sans-serif; /* Пример шрифта */
+}
+
+.app-header {
+  position: absolute; /* Логотип в верхнем левом углу */
+  top: 20px;
+  left: 20px;
+}
+
+.spotify-logo {
+  height: 40px; /* Размер логотипа */
+  width: auto;
+  fill: #1db954; /* Зеленый цвет для логотипа, если SVG поддерживает */
+}
+
+.app-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px; /* Отступы между элементами */
+}
+
+.main-title {
+  font-size: 3em; /* Большой заголовок */
+  color: #1db954; /* Зеленый цвет, как на макете */
+  margin-bottom: 0;
+}
+
+.signin-text {
+  font-size: 1.2em;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.social-buttons-container {
+  display: flex;
+  gap: 20px; /* Отступ между кнопками */
+  margin-top: 30px;
+}

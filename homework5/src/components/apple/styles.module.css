@@ -1,0 +1,29 @@
+/* src/components/apple/styles.module.css */
+.button {
+  background: none;
+  border: 2px solid #1db954; /* Зеленая рамка */
+  border-radius: 50px; /* Скругленные края для "пилюли" */
+  padding: 10px 30px; /* Отступы внутри кнопки */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease; /* Плавный переход для рамки */
+  width: 150px; /* Примерная ширина, можно настроить */
+  height: 60px; /* Примерная высота, можно настроить */
+}
+
+.button:hover {
+  border-color: #007aff; /* Синяя рамка при наведении */
+}
+
+.icon {
+  height: 40px; /* Размер иконки */
+  width: auto;
+  transition: fill 0.3s ease; /* Если SVG принимает fill в CSS */
+}
+
+/* Если SVG-иконки не меняют цвет через CSS fill,
+   а имеют жестко заданный цвет, то нужно будет
+   менять саму иконку, как это сделано в JS.
+   Для рамки transition будет работать */
