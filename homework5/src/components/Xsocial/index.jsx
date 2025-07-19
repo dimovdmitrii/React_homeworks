@@ -1,4 +1,3 @@
-// src/components/xsocial/index.jsx
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 
@@ -9,7 +8,7 @@ const XsocialButton = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <button
+    <div
       className={styles.button}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -19,7 +18,7 @@ const XsocialButton = () => {
         className={styles.icon}
         alt="X Icon"
       />
-    </button>
+    </div>
   );
 };
 

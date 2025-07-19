@@ -1,4 +1,3 @@
-// src/components/google/index.jsx
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 
@@ -9,7 +8,7 @@ const GoogleButton = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <button
+    <div
       className={styles.button}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -19,7 +18,7 @@ const GoogleButton = () => {
         className={styles.icon}
         alt="Google Icon"
       />
-    </button>
+    </div>
   );
 };
 

@@ -1,7 +1,6 @@
-// src/App.jsx
 import React from "react";
-import "./App.css"; // Общие стили для App
-import "./index.css"; // Если index.css содержит общие сбросы/переменные
+import "./App.css";
+import "./index.css";
 
 import SpotifyLogo from "./assets/icons/MainLogo.svg";
 
@@ -17,7 +16,9 @@ function App() {
       </header>
       <main className="app-main-content">
         <h1 className="main-title">LIFE IS WASTED ON THE LIVING</h1>
-        <p className="signin-text">Sign in with</p>
+        <p className="signin-text">
+          Sign in <br /> with
+        </p>
         <div className="social-buttons-container">
           <AppleButton />
           <GoogleButton />
