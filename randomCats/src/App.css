@@ -1,0 +1,10 @@
+/* src/App.module.css */
+.appContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Занимает всю высоту viewport */
+  background-color: #f0f2f5; /* Светло-серый фон */
+  padding: 20px;
+  box-sizing: border-box;
+}
