@@ -24,7 +24,7 @@ function UserForm({ setUserInfo }) {
   return (
     <form onSubmit={handleSubmit} className={styles.formContainer}>
       <h2>Update user Info</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <label style={{ color: "red" }}>{error}</label>}
       <input
         type="text"
         value={name}
