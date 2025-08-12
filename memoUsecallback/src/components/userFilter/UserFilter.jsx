@@ -27,7 +27,7 @@ const UserFilter = () => {
   }, [filter, filterUsers]);
 
   return (
-    <div>
+    <div className="userFilterContainer">
       <h1>User Filter</h1>
       <input
         type="text"
