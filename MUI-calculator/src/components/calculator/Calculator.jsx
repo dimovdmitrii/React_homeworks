@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, TextField, Button, Typography } from "@mui/material";
+import { Container, TextField, Button, Typography, Fab } from "@mui/material";
 
 function Calculator() {
   const [num1, setNum1] = useState("");
@@ -30,10 +30,10 @@ function Calculator() {
   return (
     <Container maxWidth="sm" style={{ marginTop: "50px" }}>
       <Typography variant="h4" gutterBottom>
-        Calculator
+        Калькулятор
       </Typography>
       <TextField
-        label="Number 1"
+        label="Число 1"
         variant="outlined"
         margin="normal"
         fullWidth
@@ -43,7 +43,7 @@ function Calculator() {
         style={{ marginBottom: "20px" }}
       />
       <TextField
-        label="Number 2"
+        label="Число 2"
         variant="outlined"
         margin="normal"
         fullWidth
