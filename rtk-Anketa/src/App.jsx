@@ -1,28 +1,55 @@
-import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
+import {
+  submitAnswers,
+  reset,
+} from "./features/questionnaire/questionnaireSlice";
 import Question from "./components/Question/Question";
 import Result from "./components/result/Result";
-import { submitAnswers } from "./features/questionnaire/questionnaireSlice";
+import "./App.css";
 
 function App() {
-  const questions = useSelector((state) => state.questionnaire.questions);
   const dispatch = useDispatch();
-  const isSubmitted = useSelector((state) => state.questionnaire.isSubmitted);
+  const questions = useSelector((state) => state.questionnaire.questions);
+  const submitted = useSelector((state) => state.questionnaire.submitted);
+  const userAnswers = useSelector((state) => state.questionnaire.userAnswers);
+
+  const allAnswered = userAnswers.every((answer) => answer !== null);
 
   const handleSubmit = () => {
-    dispatch(submitAnswers());
+    if (allAnswered) {
+      dispatch(submitAnswers());
+    } else {
+      alert("Please answer all questions before submitting.");
+    }
+  };
+
+  const handleReset = () => {
+    dispatch(reset());
   };
 
   return (
-    <div className="app-container">
-      <h1>Quiz</h1>
-      {questions.map((question) => (
-        <Question key={question.id} question={question} />
+    <div className="app">
+      <h1>Questionnaire</h1>
+      {questions.map((q) => (
+        <Question key={q.id} question={q} />
       ))}
-      <button onClick={handleSubmit} disabled={isSubmitted}>
-        Send
-      </button>
-      <Result />
+
+      {!submitted ? (
+        <button
+          className="submitButton"
+          onClick={handleSubmit}
+          disabled={!allAnswered}
+        >
+          Submit
+        </button>
+      ) : (
+        <>
+          <Result />
+          <button className="submitButton" onClick={handleReset}>
+            Restart
+          </button>
+        </>
+      )}
     </div>
   );
 }

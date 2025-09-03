@@ -1,42 +1,23 @@
-body {
-  margin: 0;
-  background-color: #f0f0f0;
+.app {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.app-container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-h1 {
-  font-size: 2.5em;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-button {
-  width: 100%;
-  padding: 15px;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: white;
+.submitButton {
   background-color: #007bff;
+  color: white;
   border: none;
-  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 3px;
 }
 
-button:hover:not(:disabled) {
-  background-color: #0056b3;
-}
-
-button:disabled {
-  background-color: #cccccc;
+.submitButton:disabled {
+  background-color: #7baaf7;
   cursor: not-allowed;
 }

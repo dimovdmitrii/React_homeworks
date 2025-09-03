@@ -1,25 +1,17 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import styles from "./styles.module.css";
 
-function Result() {
-  const score = useSelector((state) => state.questionnaire.score);
-  const totalQuestions = useSelector(
-    (state) => state.questionnaire.questions.length
-  );
+const Result = () => {
+  const { submitted, score } = useSelector((state) => state.questionnaire);
 
-  const isSubmitted = useSelector((state) => state.questionnaire.isSubmitted);
-
-  if (!isSubmitted) {
-    return null;
-  }
+  if (!submitted) return null;
 
   return (
-    <div className={styles.resultContainer}>
-      <h2>
-        Your Score: {score} from {totalQuestions}
-      </h2>
+    <div className={styles.result}>
+      <h2>Your Score: {score}</h2>
     </div>
   );
-}
+};
 
 export default Result;

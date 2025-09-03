@@ -5,111 +5,65 @@ const initialState = {
     {
       id: 1,
       text: "Question 1?",
-      answers: [
-        {
-          text: "Option 1",
-          value: 1,
-        },
-        {
-          text: "Option 2",
-          value: 2,
-        },
-      ],
-      userAnswer: null,
-      correctAnswer: 1,
+      options: ["Option 1", "Option 2"],
+      answer: 0,
     },
     {
       id: 2,
       text: "Question 2?",
-      answers: [
-        {
-          text: "Option 1",
-          value: 1,
-        },
-        {
-          text: "Option 2",
-          value: 2,
-        },
-      ],
-      userAnswer: null,
-      correctAnswer: 2,
+      options: ["Option 1", "Option 2"],
+      answer: 1,
     },
     {
       id: 3,
       text: "Question 3?",
-      answers: [
-        {
-          text: "Option 1",
-          value: 1,
-        },
-        {
-          text: "Option 2",
-          value: 2,
-        },
-      ],
-      userAnswer: null,
-      correctAnswer: 1,
+      options: ["Option 1", "Option 2"],
+      answer: 0,
     },
     {
       id: 4,
       text: "Question 4?",
-      answers: [
-        {
-          text: "Option 1",
-          value: 1,
-        },
-        {
-          text: "Option 2",
-          value: 2,
-        },
-      ],
-      userAnswer: null,
-      correctAnswer: 2,
+      options: ["Option 1", "Option 2"],
+      answer: 0,
     },
     {
       id: 5,
       text: "Question 5?",
-      answers: [
-        {
-          text: "Option 1",
-          value: 1,
-        },
-        {
-          text: "Option 2",
-          value: 2,
-        },
-      ],
-      userAnswer: null,
-      correctAnswer: 2,
+      options: ["Option 1", "Option 2"],
+      answer: 1,
     },
   ],
+  userAnswers: Array(5).fill(null),
+  submitted: false,
   score: 0,
-  isSubmitted: false,
 };
 
 const questionnaireSlice = createSlice({
-  name: "questionnare",
+  name: "questionnaire",
   initialState,
   reducers: {
     answerQuestion: (state, action) => {
-      const { questionId, answerValue } = action.payload;
-      const question = state.questions.find((q) => q.id === questionId);
-      if (question) {
-        question.userAnswer = answerValue;
-      }
+      const { questionId, optionIndex } = action.payload;
+      state.userAnswers[questionId - 1] = optionIndex;
     },
     submitAnswers: (state) => {
-      let newScore = 0;
-      state.questions.forEach((q) => {
-        if (q.userAnswer === q.correctAnswer) {
-          newScore += 1;
+      state.submitted = true;
+      let calculatedScore = 0;
+      state.questions.forEach((q, idx) => {
+        if (state.userAnswers[idx] === q.answer) {
+          calculatedScore += 1;
         }
       });
-      state.score = newScore;
-      state.isSubmitted = true;
+      state.score = calculatedScore;
+    },
+    reset: (state) => {
+      state.userAnswers = Array(state.questions.length).fill(null);
+      state.submitted = false;
+      state.score = 0;
     },
   },
 });
 
-export const { answerQuestion, submitAnswers } = questionnaireSlice.actions;
+export const { answerQuestion, submitAnswers, reset } =
+  questionnaireSlice.actions;
 export default questionnaireSlice.reducer;
